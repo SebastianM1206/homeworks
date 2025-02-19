@@ -6,9 +6,9 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <FirstApp />
-    </>
+    <div className="flex items-center justify-center h-screen">
+      <FirstApp title="CONTADOR EN CLASE " valueToStart={10} />
+    </div>
   );
 }
 
