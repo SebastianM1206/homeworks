@@ -1,14 +1,19 @@
-import { useState } from "react";
-import "./App.css";
-import FirstApp from "./components/FirstApp";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Counter from "./pages/Counter";
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="flex items-center justify-center h-screen">
-      <FirstApp title="CONTADOR EN CLASE " valueToStart={10} />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/category" element={<Category />} />
+      </Routes>
+    </Router>
   );
 }
 
