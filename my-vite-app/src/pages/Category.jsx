@@ -3,10 +3,9 @@ import Container from "../components/Container";
 
 function Category() {
   return (
-    <>
-      <h1 className="text-3xl font-bold text-center">Category</h1>
+    <div className="flex flex-col items-center  min-h-screen py-2">
       <Container></Container>
-    </>
+    </div>
   );
 }
 

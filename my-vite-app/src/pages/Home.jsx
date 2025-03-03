@@ -1,7 +1,7 @@
 import React from "react";
 
 function Home() {
-  return <div>HOMEWORKS</div>;
+  return <div className="THIS IS MY CHALLENGE APP"></div>;
 }
 
 export default Home;

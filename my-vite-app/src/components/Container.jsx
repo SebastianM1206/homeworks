@@ -1,37 +1,20 @@
 import React, { useState } from "react";
-import InputCategory from "./InputCategory";
+import ComponentApp from "./ComponentApp";
 
 function Container() {
-  const [categoria, setCategoria] = useState("");
-  const [categorias, setCategorias] = useState([]);
+  const [categories, setCategories] = useState(["React", "Vue", "Angular"]);
 
-  const addCategoria = () => {
-    setCategorias([...categorias, categoria]);
-    setCategoria("");
+  //el cucho
+  const handleAddCategory = (newOne) => {
+    setCategories([...categories, newOne]);
   };
 
   return (
-    <div className="flex items-center justify-center  bg-white">
-      <div className="w-full max-w-md p-6 bg-white shadow-lg rounded-md">
-        <h1 className="text-2xl  text-gray-800 mb-4 text-center">
-          Añadir nueva categoría
-        </h1>
-        <InputCategory
-          categoria={categoria}
-          setCategoria={setCategoria}
-          addCategoria={addCategoria}
-        />
-        <ul className="space-y-2">
-          {categorias.map((cate, index) => (
-            <li
-              key={index}
-              className="p-2 bg-gray-100 rounded text-gray-700 text-center"
-            >
-              {cate}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="flex flex-col items-center justify-center  bg-gray-800 text-white p-6 rounded-xl shadow-lg border border-cyan-400 max-w-md w-full">
+      <h2 className="text-4xl font-semibold text-cyan-300 mb-4">
+        Hola Soy el dad
+      </h2>
+      <ComponentApp dadFunction={handleAddCategory} dadArray={categories} />
     </div>
   );
 }
