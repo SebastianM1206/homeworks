@@ -5,14 +5,14 @@ const Navbar = () => {
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-lg font-bold">
-          MiApp CHALLENGES
+          MyChallengesApp
         </Link>
         <div className="space-x-4">
           <Link to="/" className="text-white">
             Home
           </Link>
-          <Link to="/category" className="text-white">
-            CHALLENGE 04
+          <Link to="/challenge" className="text-white">
+            CHALLENGE 05
           </Link>
         </div>
       </div>
