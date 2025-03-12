@@ -1,10 +1,9 @@
 import React from "react";
-import user from "../utils/user"; //se importa el objeto usuario por defecto
+import user from "../utils/user";
 
 const Profile = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
-      {/* Sección del perfil */}
       <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center w-full max-w-lg">
         <img
           src={user.profileImage}
@@ -21,7 +20,6 @@ const Profile = () => {
         </button>
       </div>
 
-      {/* Publicaciones del usuario */}
       <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
         Mis publicaciones
       </h3>
