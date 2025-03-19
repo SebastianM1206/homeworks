@@ -1,17 +1,10 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Button from "../components/Button";
-import BookStackComponent from "./BookStackComponent";
+import ATMQueueComponent from "./ATMQueueComponent";
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  const handleNavigate = () => {
-    navigate("/login");
-  };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
-      <BookStackComponent />
+      <ATMQueueComponent />
     </div>
   );
 };
