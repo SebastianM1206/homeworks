@@ -100,7 +100,7 @@ export default function BookStackComponent() {
           <div>
             <h3 className="font-semibold mb-2">Last book (Top Book):</h3>
             <p className="bg-white p-2 rounded shadow">
-              {books[0].name} by {books[0].author}
+              {bookStack.peek().name} by {bookStack.peek().name}
             </p>
           </div>
         ) : (
