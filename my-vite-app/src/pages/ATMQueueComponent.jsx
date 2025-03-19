@@ -57,7 +57,9 @@ export default function ATMQueueComponent() {
 
   return (
     <div className="w-lg mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">🏧 ATM Queue</h2>
+      <h2 className="text-xl font-bold mb-4">
+        Welcome to bancolombia ATM Queue
+      </h2>
 
       {/* Input Fields */}
       <div className="grid grid-cols-1 gap-2 mb-4">
