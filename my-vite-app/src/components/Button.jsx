@@ -5,7 +5,7 @@ function Button({ text, handleFunction }) {
     <div>
       <button
         onClick={() => handleFunction()}
-        className="m-3 px-6 p-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition-all duration-300"
+        className="bg-blue-500 text-white px-4 py-2 m-2 cursor-pointer hover:bg-blue-700 transition-all duration-300"
       >
         {text}
       </button>
