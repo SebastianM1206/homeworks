@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Counter from "./pages/Counter";
 import Home from "./pages/Home";
-import Category from "./pages/Category";
 import Navbar from "./components/Navbar";
+import Stack from "./pages/Stack";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/counter" element={<Counter />} />
-        <Route path="/category" element={<Category />} />
+        <Route path="/stack" element={<Stack />} />
       </Routes>
     </Router>
   );

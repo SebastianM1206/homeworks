@@ -12,10 +12,10 @@ const Navbar = () => {
             Home
           </Link>
           <Link to="/counter" className="text-white">
-            Challenge 03
+            Challenge 10 COUNTER
           </Link>
-          <Link to="/category" className="text-white">
-            Example arrays
+          <Link to="/stack" className="text-white">
+            Challenge 10 STACK
           </Link>
         </div>
       </div>

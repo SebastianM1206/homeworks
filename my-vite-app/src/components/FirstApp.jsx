@@ -1,20 +1,33 @@
 import React from "react";
 import { useState } from "react";
 import Button from "./Button";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  increment,
+  decrement,
+  incrementByAmount,
+} from "../store/slices/CounterSlice";
 
 const FirstApp = ({ valueToStart, title = "No hay jasajsaj" }) => {
-  const [count, setCount] = useState(valueToStart);
+  const dispatch = useDispatch();
 
+  const count = useSelector((state) => state.counter.value);
   const handleAdd = () => {
-    setCount(count + 1);
+    dispatch(increment());
   };
 
   const handleSubstract = () => {
-    setCount(count - 1);
+    dispatch(decrement());
   };
 
   const handleReset = () => {
     setCount(valueToStart);
+  };
+
+  const [amount, setAmount] = useState("");
+
+  const handleIncrementByAmount = () => {
+    dispatch(incrementByAmount(Number(amount)));
   };
 
   return (
@@ -24,6 +37,16 @@ const FirstApp = ({ valueToStart, title = "No hay jasajsaj" }) => {
       <Button text="Add +1" handleFunction={handleAdd} />
       <Button text="Subtract -1" handleFunction={handleSubstract} />
       <Button text="Reset Counter" handleFunction={handleReset} />
+      <div className="mt-4 flex">
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="border p-2 rounded"
+          placeholder="Enter amount"
+        />
+        <Button text="Add Amount" handleFunction={handleIncrementByAmount} />
+      </div>
     </div>
   );
 };
