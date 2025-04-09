@@ -1,19 +1,11 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Counter from "./pages/Counter";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Stack from "./pages/Stack";
+import { BrowserRouter } from "react-router-dom";
+import { AppRouter } from "./routes/AppRouter";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/stack" element={<Stack />} />
-      </Routes>
-    </Router>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
 
