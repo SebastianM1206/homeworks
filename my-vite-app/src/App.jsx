@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Counter from "./pages/Counter";
+import FormPage from "./pages/FormPage";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Stack from "./pages/Stack";
+import AllClients from "./pages/AllClients";
 
 function App() {
   return (
@@ -10,8 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/stack" element={<Stack />} />
+        <Route path="/allClients" element={<AllClients />} />
       </Routes>
     </Router>
   );

@@ -2,20 +2,17 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-blue-900 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-white text-lg font-bold">
-          MiApp
+          CENTRO DE ATENCION AL CLIENTE
         </Link>
         <div className="space-x-4">
           <Link to="/" className="text-white">
-            Home
+            Clientes
           </Link>
-          <Link to="/counter" className="text-white">
-            Challenge 10 COUNTER
-          </Link>
-          <Link to="/stack" className="text-white">
-            Challenge 10 STACK
+          <Link to="/allClients" className="text-white">
+            VerTodo
           </Link>
         </div>
       </div>
