@@ -4,6 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
+import { getDatabase, ref, set, push, onValue } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -21,7 +22,19 @@ const auth = getAuth();
 const analytics = getAnalytics(app);
 const firebaseStorage = getStorage(app);
 const db = getFirestore(app);
+const database = getDatabase(app);
 
 const provider = new GoogleAuthProvider();
 
-export { auth, analytics, provider, firebaseStorage, db };
+export {
+  auth,
+  analytics,
+  provider,
+  firebaseStorage,
+  db,
+  database,
+  ref,
+  set,
+  push,
+  onValue,
+};

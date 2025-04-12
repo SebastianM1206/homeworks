@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { startLogout } from "../store/slices/auth/thunks";
 import { useNavigate } from "react-router-dom";
 import Crud from "../components/Crud";
+import Chat from "../components/Chat";
 
 function Home() {
   const navigate = useNavigate();
@@ -29,10 +30,10 @@ function Home() {
 
       <div className="flex-1 p-8">
         <h2 className="text-xl font-semibold text-gray-700 mb-4">
-          ¡Explora la aplicación! (es un crud jajsjas)
+          ¡Explora la aplicación! (es un crud y un chat jasjjasj )
         </h2>
         <Crud />
-        {/* Aquí puedes agregar más componentes o contenido dinámico */}
+        <Chat />
       </div>
     </div>
   );
