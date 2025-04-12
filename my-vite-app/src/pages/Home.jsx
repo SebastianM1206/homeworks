@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { startLogout } from "../store/slices/auth/thunks";
 import { useNavigate } from "react-router-dom";
+import Crud from "../components/Crud";
 
 function Home() {
   const navigate = useNavigate();
@@ -28,11 +29,9 @@ function Home() {
 
       <div className="flex-1 p-8">
         <h2 className="text-xl font-semibold text-gray-700 mb-4">
-          ¡Explora la aplicación!
+          ¡Explora la aplicación! (es un crud jajsjas)
         </h2>
-        <p className="text-gray-600">
-          Bueno, que te puedo decir, esto es todo lo que verás en la HomePage.
-        </p>
+        <Crud />
         {/* Aquí puedes agregar más componentes o contenido dinámico */}
       </div>
     </div>
