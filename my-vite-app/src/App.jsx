@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import Category from "./pages/Category";
 import Navbar from "./components/Navbar";
+import TreePage from "./pages/TreePage";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category" element={<Category />} />
+        <Route path="/tree" element={<TreePage />} />
       </Routes>
     </Router>
   );
