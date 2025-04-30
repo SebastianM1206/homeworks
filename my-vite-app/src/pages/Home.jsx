@@ -1,12 +1,14 @@
 import React from "react";
-import TreeNode from "../components/TreeNode";
-import BinaryTree from "../components/BinaryTree";
-import { arbol } from "../utils/data";
 
 function Home() {
   return (
-    <div className=" ">
-      <BinaryTree initialRoot={arbol} />
+    <div className="flex flex-col justify-center items-center h-screen bg-gray-100">
+      <h1 className="text-3xl font-bold text-center mt-10">
+        Binary Tree HomePage
+      </h1>
+      <div className="flex">
+        <p>Generalmente no hay nada, mejor ir a la TreePage</p>
+      </div>
     </div>
   );
 }
