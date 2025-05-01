@@ -1,77 +1,55 @@
-import { Node } from "./node.js";
+import Home from "../pages/Home";
+import Profile from "../pages/Profile";
+import Settings from "../pages/Settings";
+import Password from "../pages/Password";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Team from "../pages/Team";
+import History from "../pages/History";
+import Support from "../pages/Support";
+import Feedback from "../pages/Feedback";
+import { sideBarNode } from "./node";
 
-export class BinaryTree {
-  constructor() {
-    this.root = null;
-  }
-  //insert method to add a new node to the tree (just like we learned in class)
-  insert(value) {
-    const newNode = new Node(value);
-    if (!this.root) {
-      this.root = newNode;
-      return;
-    }
+// This is a tree structure that represents the sidebar menu of the application.
+// Each node in the tree has a title, a link, a component to render, and an array of children nodes.
 
-    let current = this.root;
-    while (true) {
-      if (value < current.value) {
-        if (!current.left) {
-          current.left = newNode;
-          return;
-        }
-        current = current.left;
-      } else {
-        if (!current.right) {
-          current.right = newNode;
-          return;
-        }
-        current = current.right;
-      }
-    }
-  }
-  //here we are going to create methods to traverse the tree in different ways (inorder, preorder, postorder)
-  inorder(node = this.root, result = []) {
-    if (!node) return result;
-    this.inorder(node.left, result);
-    result.push(node.value);
-    this.inorder(node.right, result);
-    return result;
-  }
+const root = new sideBarNode("Sidebar Menu", "/", Home);
 
-  preorder(node = this.root, result = []) {
-    if (!node) return result;
-    result.push(node.value);
-    this.preorder(node.left, result);
-    this.preorder(node.right, result);
-    return result;
-  }
+const homeNode = new sideBarNode("Home", "/", Home);
 
-  postorder(node = this.root, result = []) {
-    if (!node) return result;
-    this.postorder(node.left, result);
-    this.postorder(node.right, result);
-    result.push(node.value);
-    return result;
-  }
+const settingsNode = new sideBarNode("Settings", "/settings", Settings);
+const profileNode = new sideBarNode("Profile", "/settings/profile", Profile);
+const passwordNode = new sideBarNode(
+  "Password",
+  "/settings/password",
+  Password
+);
 
-  contains(value) {
-    let current = this.root;
+// Adding new nodes
+const aboutNode = new sideBarNode("About", "/about", About);
+const teamNode = new sideBarNode("Team", "/about/team", Team);
+const historyNode = new sideBarNode("History", "/about/history", History);
 
-    while (current) {
-      if (current.value === value) {
-        return true; // if we find the value, return true
-      }
+const contactNode = new sideBarNode("Contact", "/contact", Contact);
+const supportNode = new sideBarNode("Support", "/contact/support", Support);
+const feedbackNode = new sideBarNode("Feedback", "/contact/feedback", Feedback);
 
-      // if the value is less than the current node's value, go left
-      // if the value is greater than the current node's value, go right
-      if (value < current.value) {
-        current = current.left;
-      } else {
-        current = current.right;
-      }
-    }
+// Adding children to the settings node
+settingsNode.addChild(profileNode);
+settingsNode.addChild(passwordNode);
 
-    // if we get to this point, the value was not found in the tree
-    return false;
-  }
-}
+// Adding children to the about node
+aboutNode.addChild(teamNode);
+aboutNode.addChild(historyNode);
+
+// Adding children to the contact node
+contactNode.addChild(supportNode);
+contactNode.addChild(feedbackNode);
+
+// Adding children to the root node
+root.addChild(homeNode);
+root.addChild(settingsNode);
+root.addChild(aboutNode);
+root.addChild(contactNode);
+
+export const sideBarTree = root;

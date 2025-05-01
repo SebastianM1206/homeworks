@@ -1,16 +1,12 @@
-export class Node {
-  // Node class for a binary tree (just like we learned in class)
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+export class sideBarNode {
+  constructor(title, link = "", component = null) {
+    this.title = title;
+    this.link = link;
+    this.component = component;
+    this.children = [];
   }
 
-  isLeaf() {
-    if (this.left === null && this.right === null) {
-      return true;
-    } else {
-      return false;
-    }
+  addChild(childNode) {
+    this.children.push(childNode);
   }
 }
