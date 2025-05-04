@@ -9,11 +9,7 @@ const Navbar = () => {
         </Link>
         <div className="space-x-4">
           <Link to="/" className="text-white">
-            Home
-          </Link>
-
-          <Link to="/tree" className="text-white">
-            TreePage
+            GRAPH
           </Link>
         </div>
       </div>
