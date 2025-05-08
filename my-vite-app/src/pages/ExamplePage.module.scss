@@ -1,0 +1,5 @@
+@use "../styles/sharedMixins.scss" as mixins;
+
+.section {
+  @include mixins.themed-section(#11232f); 
+}

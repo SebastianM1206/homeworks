@@ -1,0 +1,60 @@
+
+$colors: (
+  "primary": #3498db,
+  "dark": #2c3e50,
+  "light": #ecf0f1
+);
+
+// Using functions to get colors as a practice
+@function color($name) {
+  @return map-get($colors, $name);
+}
+
+// Function to get the contrast color based on the background color
+@function get-contrast($bg-color) {
+  @if (lightness($bg-color) > 60) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Navbar Styles
+.navbar {
+  background-color: color("dark");
+  color: get-contrast(color("dark"));
+  padding: 1rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: get-contrast(color("dark"));
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: get-contrast(color("dark"));
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
