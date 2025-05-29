@@ -1,5 +1,0 @@
-@use "../styles/sharedMixins" as mixins;
-
-.section {
-  @include mixins.themed-section(#ecf0f1); // Claro
-}

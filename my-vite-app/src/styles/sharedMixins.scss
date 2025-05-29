@@ -1,7 +1,0 @@
-@mixin themed-section($bg-color) {   
-    background-color: $bg-color;
-    color: if(lightness($bg-color) > 60, #000, #fff); // Adjust text color based on background lightness
-    padding: 2rem;
-    min-height: calc(100vh - 70px); 
-}
-  
